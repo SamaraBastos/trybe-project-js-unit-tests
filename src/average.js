@@ -10,21 +10,18 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+let stringVazia = '';
 
 const average = (array) => {
-  if (array === '') return undefined;
+  if (array === stringVazia) return undefined;
   if (array.length === 0) return undefined;
-
   let total = 0;
 
   for (let i = 0; i < array.length; i += 1) {
-    if (typeof (array[i]) !== 'number') {
-      return undefined;
-    }
+    if (typeof (array[i]) !== 'number') { return undefined; }
     total += array[i];
   }
-  let aleatorio = Math.round(total / array.length);
-  return aleatorio;
+ //let aleatorio = Math.round(total / array.length); return aleatorio;
 };
 
 module.exports = average;
